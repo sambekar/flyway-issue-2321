@@ -1,0 +1,36 @@
+repositories {
+		maven { url "https://repo.flywaydb.org/repo" 
+				credentials {
+								username ''
+								password 'flyway'
+							}
+			  }
+        mavenCentral()
+		maven { url 'http://repo1.maven.org/maven2' }
+		maven { url 'http://www.datanucleus.org/downloads/maven2' }
+    } 
+buildscript {
+    repositories {
+		maven { url "https://repo.flywaydb.org/repo" 
+				credentials {
+								username ''
+								password 'flyway'
+							}
+			  }
+        mavenCentral()
+    }   
+	
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	compile("org.flywaydb.enterprise:flyway-core:6.0.0-beta")
+	compile("oracle:ojdbc6:11.2.0.3")
+}
